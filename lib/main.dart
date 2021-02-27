@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
       title: 'QR Scanner',
       initialRoute: 'home',
       routes: {'home': (_) => HomePage(), 'map': (_) => MapPage()},
+      theme: ThemeData(
+          primaryColor: Colors.deepPurple,
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+              backgroundColor: Colors.deepPurple)),
     );
   }
 }
