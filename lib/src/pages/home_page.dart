@@ -17,7 +17,10 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.delete_forever),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ScanListProvider>(context, listen: false)
+                  .borrarTodos();
+            },
           )
         ],
       ),
@@ -27,6 +30,8 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
+
+  void _deleteAll() {}
 }
 
 class _HomePageBody extends StatelessWidget {
