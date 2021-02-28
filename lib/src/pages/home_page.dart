@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_scanner/src/pages/direcciones_page.dart';
 import 'package:qr_scanner/src/pages/mapas_page.dart';
-import 'package:qr_scanner/src/providers/db_provider.dart';
+import 'package:qr_scanner/src/providers/scan_list_provider.dart';
 import 'package:qr_scanner/src/providers/ui_provider.dart';
 import 'package:qr_scanner/src/widgets/custom_navigatorbar.dart';
 import 'package:qr_scanner/src/widgets/scan_button.dart';
@@ -42,13 +42,19 @@ class _HomePageBody extends StatelessWidget {
     // final tempScan = new ScanModel(valor: 'https://google.com');
     // DBProvider.dbProvider.getScanById(2).then((scan) => print(scan.valor));
 
+    //Usar scanlistprovider
+    final scanListPrvider =
+        Provider.of<ScanListProvider>(context, listen: false);
     switch (currentIndex) {
       case 0:
+        scanListPrvider.cargarScansPorTipo('geo');
         return MapasPage();
 
       case 1:
+        scanListPrvider.cargarScansPorTipo('http');
         return DireccionesPage();
       default:
+        scanListPrvider.cargarScansPorTipo('geo');
         return MapasPage();
     }
   }
