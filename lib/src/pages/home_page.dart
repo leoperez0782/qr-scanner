@@ -39,8 +39,8 @@ class _HomePageBody extends StatelessWidget {
     final currentIndex = uiProvider.selectedMenuOpt;
 
     //tODO TEMPORAL LEER DB
-    final tempScan = new ScanModel(valor: 'https://google.com');
-    DBProvider.dbProvider.nuevoScan(tempScan);
+    // final tempScan = new ScanModel(valor: 'https://google.com');
+    // DBProvider.dbProvider.getScanById(2).then((scan) => print(scan.valor));
 
     switch (currentIndex) {
       case 0:
