@@ -30,8 +30,6 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-
-  void _deleteAll() {}
 }
 
 class _HomePageBody extends StatelessWidget {
